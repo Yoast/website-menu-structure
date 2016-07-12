@@ -53,13 +53,14 @@ class Menu_Structure {
 				'label' => 'Meet us',
 				'type'  => 'home',
 			) ) );
-		$mainMenuItem->addChild( new Menu_Item(
-			$this->myYoastBaseUrl,
-			array(
-				'label' => 'My Yoast',
-				'icon'  => 'user',
-				'type'  => 'home',
-			) ) );
+		// uncomment once my.yoast.con fully goes live
+//		$mainMenuItem->addChild( new Menu_Item(
+//			$this->myYoastBaseUrl,
+//			array(
+//				'label' => 'My Yoast',
+//				'icon'  => 'user',
+//				'type'  => 'home',
+//			) ) );
 
 		$this->mainMenuItems[] = $mainMenuItem;
 	}
