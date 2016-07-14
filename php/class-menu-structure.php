@@ -14,8 +14,12 @@ class Menu_Structure {
 	private $mainMenuItems;
 	private $yoastComBaseUrl;
 	private $myYoastBaseUrl;
+	private $development = false;
 
 	public function __construct() {
+		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+			$this->development = true;
+		}
 		$this->yoastComBaseUrl = $this->getYoastComBaseUrl();
 		$this->myYoastBaseUrl  = $this->getmyYoastBaseUrl();
 		$this->academyBaseUrl  = $this->getAcademyBaseUrl();
@@ -149,7 +153,7 @@ class Menu_Structure {
 				'type'  => self::PLUGINS_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
-			$this->yoastComBaseUrl . '/software/yoast-seo-for-drupal-module/',
+			$this->yoastComBaseUrl . 'software/yoast-seo-for-drupal-module/',
 			array(
 				'label' => 'Drupal',
 				'type'  => self::PLUGINS_TYPE,
@@ -235,7 +239,7 @@ class Menu_Structure {
 
 	private function addHireUsMenu() {
 		$mainMenuItem = new Main_Menu_Item(
-			$this->yoastComBaseUrl . 'hire-us',
+			$this->yoastComBaseUrl . 'hire-us/',
 			array(
 				'label'    => 'Hire us',
 				'type'     => self::HIRE_US_TYPE,
@@ -311,35 +315,31 @@ class Menu_Structure {
 	}
 
 	private function getYoastComBaseUrl() {
-		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+		if ( $this->development ) {
 			return 'http://yoast.dev/';
-		} else {
-			return 'https://yoast.com/';
 		}
+		return 'https://yoast.com/';
 	}
 
 	private function getMyYoastBaseUrl() {
-		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+		if ( $this->development ) {
 			return 'http://my.yoast.dev/';
-		} else {
-			return 'https://my.yoast.com/';
 		}
+		return 'https://my.yoast.com/';
 	}
 
 	private function getAcademyBaseUrl() {
-		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+		if ( $this->development ) {
 			return 'http://yoast.academy.dev/';
-		} else {
-			return 'https://yoast.academy/';
 		}
+		return 'https://yoast.academy/';
 	}
 
 	private function getKBBaseUrl() {
-		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
+		if ( $this->development ) {
 			return 'http://kb.yoast.dev/';
-		} else {
-			return 'https://kb.yoast.com/';
 		}
+		return 'https://kb.yoast.com/';
 	}
 
 	/**
