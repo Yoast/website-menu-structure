@@ -105,7 +105,7 @@ class Menu_Structure {
 				'type'  => self::SEO_BLOG_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
-			$this->yoastComBaseUrl . 'search-news/',
+			$this->yoastComBaseUrl . 'cat/search-news/',
 			array(
 				'label' => 'Search news',
 				'type'  => self::SEO_BLOG_TYPE,
@@ -175,7 +175,7 @@ class Menu_Structure {
 				'label'    => 'Courses',
 				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
-					$this->academyBaseUrl,
+					$this->academyBaseUrl  => array(),
 					$this->yoastComBaseUrl => array( 'yoast_courses' ),
 				),
 			) );
@@ -274,10 +274,7 @@ class Menu_Structure {
 				'label'    => 'FAQ',
 				'type'     => self::FAQ_TYPE,
 				'activeOn' => array(
-					$this->kbBaseUrl => array( 'wpkb-article' ),
-					array(
-						$this->kbBaseUrl
-					)
+					$this->kbBaseUrl => array(),
 				)
 			) );
 		$mainMenuItem->addChild( new Menu_Item(
@@ -318,6 +315,7 @@ class Menu_Structure {
 		if ( $this->development ) {
 			return 'http://yoast.dev/';
 		}
+
 		return 'https://yoast.com/';
 	}
 
@@ -325,6 +323,7 @@ class Menu_Structure {
 		if ( $this->development ) {
 			return 'http://my.yoast.dev/';
 		}
+
 		return 'https://my.yoast.com/';
 	}
 
@@ -332,6 +331,7 @@ class Menu_Structure {
 		if ( $this->development ) {
 			return 'http://yoast.academy.dev/';
 		}
+
 		return 'https://yoast.academy/';
 	}
 
@@ -339,6 +339,7 @@ class Menu_Structure {
 		if ( $this->development ) {
 			return 'http://kb.yoast.dev/';
 		}
+
 		return 'https://kb.yoast.com/';
 	}
 
