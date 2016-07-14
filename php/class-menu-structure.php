@@ -6,7 +6,7 @@ class Menu_Structure {
 	const HOME_TYPE = 'home';
 	const SEO_BLOG_TYPE = 'seo-blog';
 	const PLUGINS_TYPE = 'plugins';
-	const COURSES_TYPE = 'cources';
+	const COURSES_TYPE = 'courses';
 	const EBOOKS_TYPE = 'ebooks';
 	const HIRE_US_TYPE = 'hire-us';
 	const FAQ_TYPE = 'faq';
@@ -171,7 +171,7 @@ class Menu_Structure {
 				'label'    => 'Courses',
 				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
-					$this->academyBaseUrl . '/',
+					$this->academyBaseUrl,
 					$this->yoastComBaseUrl => array( 'yoast_courses' ),
 				),
 			) );
@@ -269,7 +269,12 @@ class Menu_Structure {
 			array(
 				'label'    => 'FAQ',
 				'type'     => self::FAQ_TYPE,
-				'activeOn' => array( $this->kbBaseUrl => array( 'wpkb-article' ) ),
+				'activeOn' => array(
+					$this->kbBaseUrl => array( 'wpkb-article' ),
+					array(
+						$this->kbBaseUrl
+					)
+				)
 			) );
 		$mainMenuItem->addChild( new Menu_Item(
 			$this->kbBaseUrl . 'kb/category/wordpress-plugins/',
