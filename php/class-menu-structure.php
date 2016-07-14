@@ -37,7 +37,7 @@ class Menu_Structure {
 	private function addHomeMenu() {
 
 		$mainMenuItem = new Main_Menu_Item(
-			$this->yoastComBaseUrl . '/',
+			$this->yoastComBaseUrl,
 			array(
 				'icon'             => 'yoast',
 				'type'             => self::HOME_TYPE,
@@ -176,7 +176,7 @@ class Menu_Structure {
 				),
 			) );
 		$mainMenuItem->addChild( new Menu_Item(
-			$this->academyBaseUrl . '/',
+			$this->academyBaseUrl,
 			array(
 				'label' => 'My Academy',
 				'type'  => self::COURSES_TYPE,
@@ -265,7 +265,7 @@ class Menu_Structure {
 
 	private function addFAQMenu() {
 		$mainMenuItem = new Main_Menu_Item(
-			$this->kbBaseUrl . '/',
+			$this->kbBaseUrl,
 			array(
 				'label'    => 'FAQ',
 				'type'     => self::FAQ_TYPE,
