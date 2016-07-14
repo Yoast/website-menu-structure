@@ -9,7 +9,7 @@ class Menu_Structure {
 	const COURSES_TYPE = 'cources';
 	const EBOOKS_TYPE = 'ebooks';
 	const HIRE_US_TYPE = 'hire-us';
-	const FAQ_TYPE ='faq';
+	const FAQ_TYPE = 'faq';
 
 	private $mainMenuItems;
 	private $yoastComBaseUrl;
@@ -37,7 +37,7 @@ class Menu_Structure {
 	private function addHomeMenu() {
 
 		$mainMenuItem = new Main_Menu_Item(
-			$this->yoastComBaseUrl,
+			$this->yoastComBaseUrl . '/',
 			array(
 				'icon'             => 'yoast',
 				'type'             => self::HOME_TYPE,
@@ -171,12 +171,12 @@ class Menu_Structure {
 				'label'    => 'Courses',
 				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
-					$this->academyBaseUrl,
+					$this->academyBaseUrl . '/',
 					$this->yoastComBaseUrl => array( 'yoast_courses' ),
 				),
 			) );
 		$mainMenuItem->addChild( new Menu_Item(
-			$this->academyBaseUrl,
+			$this->academyBaseUrl . '/',
 			array(
 				'label' => 'My Academy',
 				'type'  => self::COURSES_TYPE,
@@ -224,7 +224,7 @@ class Menu_Structure {
 				'type'  => self::EBOOKS_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
-			$this->yoastComBaseUrl . 'ebooks/ux-conversion-seo',
+			$this->yoastComBaseUrl . 'ebooks/ux-conversion-seo/',
 			array(
 				'label' => 'UX & Conversion',
 				'type'  => self::EBOOKS_TYPE,
@@ -259,7 +259,7 @@ class Menu_Structure {
 
 	private function addFAQMenu() {
 		$mainMenuItem = new Main_Menu_Item(
-			$this->kbBaseUrl,
+			$this->kbBaseUrl . '/',
 			array(
 				'label'    => 'FAQ',
 				'type'     => self::FAQ_TYPE,
@@ -302,8 +302,7 @@ class Menu_Structure {
 	private function getYoastComBaseUrl() {
 		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
 			return 'http://yoast.dev/';
-		}
-		else {
+		} else {
 			return 'https://yoast.com/';
 		}
 	}
@@ -311,8 +310,7 @@ class Menu_Structure {
 	private function getMyYoastBaseUrl() {
 		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
 			return 'http://my.yoast.dev/';
-		}
-		else {
+		} else {
 			return 'https://my.yoast.com/';
 		}
 	}
@@ -320,8 +318,7 @@ class Menu_Structure {
 	private function getAcademyBaseUrl() {
 		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
 			return 'http://yoast.academy.dev/';
-		}
-		else {
+		} else {
 			return 'https://yoast.academy/';
 		}
 	}
@@ -329,8 +326,7 @@ class Menu_Structure {
 	private function getKBBaseUrl() {
 		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
 			return 'http://kb.yoast.dev/';
-		}
-		else {
+		} else {
 			return 'https://kb.yoast.com/';
 		}
 	}
