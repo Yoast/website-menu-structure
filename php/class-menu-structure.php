@@ -253,6 +253,12 @@ class Menu_Structure {
 				'label' => 'Platinum review',
 				'type'  => self::HIRE_US_TYPE,
 			) ) );
+		$mainMenuItem->addChild( new Menu_Item(
+			$this->yoastComBaseUrl . 'hire-us/seo-consultancy/',
+			array(
+				'label' => 'Yoast consultancy',
+				'type'  => self::HIRE_US_TYPE,
+			) ) );
 
 		$this->mainMenuItems[] = $mainMenuItem;
 	}
