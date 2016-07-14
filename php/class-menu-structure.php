@@ -6,7 +6,7 @@ class Menu_Structure {
 	const HOME_TYPE = 'home';
 	const SEO_BLOG_TYPE = 'seo-blog';
 	const PLUGINS_TYPE = 'plugins';
-	const COURCES_TYPE = 'cources';
+	const COURSES_TYPE = 'cources';
 	const EBOOKS_TYPE = 'ebooks';
 	const HIRE_US_TYPE = 'hire-us';
 	const FAQ_TYPE ='faq';
@@ -28,7 +28,7 @@ class Menu_Structure {
 		$this->addHomeMenu();
 		$this->addSEOBlogMenu();
 		$this->addPluginsMenu();
-		$this->addCourcesMenu();
+		$this->addCoursesMenu();
 		$this->addEBooksMenu();
 		$this->addHireUsMenu();
 		$this->addFAQMenu();
@@ -91,7 +91,7 @@ class Menu_Structure {
 		$mainMenuItem->addChild( new Menu_Item(
 			$this->yoastComBaseUrl . 'cat/wordpress/',
 			array(
-				'label' => 'Wordpress',
+				'label' => 'WordPress',
 				'type'  => self::SEO_BLOG_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
@@ -149,15 +149,9 @@ class Menu_Structure {
 				'type'  => self::PLUGINS_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
-			$this->yoastComBaseUrl . 'wordpress/plugins/seo/', // todo update url
+			$this->yoastComBaseUrl . '/software/yoast-seo-for-drupal-module/',
 			array(
-				'label' => 'Yoast SEO Extentions',
-				'type'  => self::PLUGINS_TYPE,
-			) ) );
-		$mainMenuItem->addChild( new Menu_Item(
-			$this->yoastComBaseUrl . 'wordpress/plugins/seo/', // todo update url
-			array(
-				'label' => 'Other platforms',
+				'label' => 'Drupal',
 				'type'  => self::PLUGINS_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
@@ -170,12 +164,12 @@ class Menu_Structure {
 		$this->mainMenuItems[] = $mainMenuItem;
 	}
 
-	private function addCourcesMenu() {
+	private function addCoursesMenu() {
 		$mainMenuItem = new Main_Menu_Item(
 			$this->yoastComBaseUrl . 'academy/courses/',
 			array(
-				'label'    => 'Cources',
-				'type'     => self::COURCES_TYPE,
+				'label'    => 'Courses',
+				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
 					$this->academyBaseUrl,
 					$this->yoastComBaseUrl => array( 'yoast_courses' ),
@@ -185,25 +179,25 @@ class Menu_Structure {
 			$this->academyBaseUrl,
 			array(
 				'label' => 'My Academy',
-				'type'  => self::COURCES_TYPE,
+				'type'  => self::COURSES_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
 			$this->yoastComBaseUrl . 'academy/course/seo-copywriting-training/',
 			array(
 				'label' => 'SEO copywriting',
-				'type'  => self::COURCES_TYPE,
+				'type'  => self::COURSES_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
 			$this->yoastComBaseUrl . 'academy/course/basic-seo-training/',
 			array(
 				'label' => 'Basic SEO',
-				'type'  => self::COURCES_TYPE,
+				'type'  => self::COURSES_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
 			$this->yoastComBaseUrl . 'academy/course/yoast-seo-wordpress-training/',
 			array(
 				'label' => 'Yoast SEO for WordPress',
-				'type'  => self::COURCES_TYPE,
+				'type'  => self::COURSES_TYPE,
 			) ) );
 
 		$this->mainMenuItems[] = $mainMenuItem;
@@ -259,12 +253,6 @@ class Menu_Structure {
 				'label' => 'Platinum review',
 				'type'  => self::HIRE_US_TYPE,
 			) ) );
-		$mainMenuItem->addChild( new Menu_Item(
-			$this->yoastComBaseUrl . 'hire-us',
-			array(
-				'label' => 'Hire team Yoast',
-				'type'  => self::HIRE_US_TYPE,
-			) ) );
 
 		$this->mainMenuItems[] = $mainMenuItem;
 	}
@@ -292,7 +280,7 @@ class Menu_Structure {
 		$mainMenuItem->addChild( new Menu_Item(
 			$this->kbBaseUrl . 'kb/category/drupal-modules/',
 			array(
-				'label' => 'Drupal modules',
+				'label' => 'Drupal',
 				'type'  => self::FAQ_TYPE,
 			) ) );
 		$mainMenuItem->addChild( new Menu_Item(
