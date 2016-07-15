@@ -12,18 +12,17 @@ class Menu_Structure {
 	const FAQ_TYPE = 'faq';
 
 	private $mainMenuItems;
+
 	private $yoastComBaseUrl;
 	private $myYoastBaseUrl;
-	private $development = false;
+	private $academyBaseUrl;
+	private $kbBaseUrl;
 
 	public function __construct() {
-		if ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' ) {
-			$this->development = true;
-		}
-		$this->yoastComBaseUrl = $this->getYoastComBaseUrl();
-		$this->myYoastBaseUrl  = $this->getmyYoastBaseUrl();
-		$this->academyBaseUrl  = $this->getAcademyBaseUrl();
-		$this->kbBaseUrl       = $this->getKBBaseUrl();
+		$this->yoastComBaseUrl = apply_filters( 'yoast:domain', 'https://yoast.com/' );
+		$this->myYoastBaseUrl  = apply_filters( 'yoast:domain', 'https://my.yoast.com/' );
+		$this->academyBaseUrl  = apply_filters( 'yoast:domain', 'https://yoast.academy/' );
+		$this->kbBaseUrl       = apply_filters( 'yoast:domain', 'https://kb.yoast.com/' );
 
 		$this->createMenuItems();
 	}
@@ -40,6 +39,7 @@ class Menu_Structure {
 
 	private function addHomeMenu() {
 
+		$base = apply_filters( 'yoast:domain', 'https://yoast.com/' );
 		$mainMenuItem = new Main_Menu_Item(
 			$this->yoastComBaseUrl,
 			array(
