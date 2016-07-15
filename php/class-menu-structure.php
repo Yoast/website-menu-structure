@@ -39,7 +39,6 @@ class Menu_Structure {
 
 	private function addHomeMenu() {
 
-		$base = apply_filters( 'yoast:domain', 'https://yoast.com/' );
 		$mainMenuItem = new Main_Menu_Item(
 			$this->yoastComBaseUrl,
 			array(
