@@ -28,7 +28,7 @@ class Menu_Structure {
 
 	/**
 	 * Menu_Structure constructor.
-	 * 
+	 *
 	 * Register exceptions for matching the currently active page.
 	 * Create the menu structure.
 	 */
@@ -52,6 +52,32 @@ class Menu_Structure {
 	 */
 	public function getMenuItems() {
 		return $this->menuItems;
+	}
+
+	/**
+	 * Hook the filter to convert Label to Primary Category
+	 *
+	 * Handle exceptions in the menu which are needed due to length constraints.
+	 */
+	private function registerLabelPrimaryCategoryConversion() {
+		add_filter( 'yoast_nav_label-primary_category', array( $this, 'convertLabelToPrimaryCategory' ) );
+	}
+
+	/**
+	 * Convert label to match Primary Category
+	 *
+	 * @param string $label Menu label to convert to Primary Category
+	 *
+	 * @return string
+	 */
+	public function convertLabelToPrimaryCategory( $label ) {
+
+		switch ( $label ) {
+			case 'UX & Conversion':
+				return 'Usability & Conversion';
+		}
+
+		return $label;
 	}
 
 	/**
@@ -342,7 +368,7 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->academyBaseUrl .'my-courses/',
+				$this->academyBaseUrl . 'my-courses/',
 				array(
 					'label' => 'My Academy',
 					'type'  => self::COURSES_TYPE,
@@ -545,37 +571,5 @@ class Menu_Structure {
 		);
 
 		$this->menuItems[] = $mainMenuItem;
-	}
-
-	/**
-	 * Hook the filter to convert Label to Primary Category
-	 *
-	 * Handle exceptions in the menu which are needed due to length constraints.
-	 */
-	private function registerLabelPrimaryCategoryConversion() {
-		static $hooked = false;
-
-		if ( $hooked ) {
-			return;
-		}
-
-		$hooked = true;
-		add_filter( 'yoast_nav_label-primary_category', array( $this, 'convertLabelToPrimaryCategory' ) );
-	}
-
-	/**
-	 * Convert label to match Primary Category
-	 *
-	 * @param string $label Menu label to convert to Primary Category
-	 *
-	 * @return string
-	 */
-	public function convertLabelToPrimaryCategory( $label ) {
-
-		if ( $label === 'UX & Conversion' ) {
-			return 'Usability & Conversion';
-		}
-
-		return $label;
 	}
 }
