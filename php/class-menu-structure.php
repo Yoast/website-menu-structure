@@ -342,7 +342,7 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->academyBaseUrl,
+				$this->academyBaseUrl .'my-courses/',
 				array(
 					'label' => 'My Academy',
 					'type'  => self::COURSES_TYPE,
