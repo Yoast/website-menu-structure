@@ -310,38 +310,6 @@ class Menu_Structure {
 		$this->mainMenuItems[] = $mainMenuItem;
 	}
 
-	private function getYoastComBaseUrl() {
-		if ( $this->development ) {
-			return 'http://yoast.dev/';
-		}
-
-		return 'https://yoast.com/';
-	}
-
-	private function getMyYoastBaseUrl() {
-		if ( $this->development ) {
-			return 'http://my.yoast.dev/';
-		}
-
-		return 'https://my.yoast.com/';
-	}
-
-	private function getAcademyBaseUrl() {
-		if ( $this->development ) {
-			return 'http://yoast.academy.dev/';
-		}
-
-		return 'https://yoast.academy/';
-	}
-
-	private function getKBBaseUrl() {
-		if ( $this->development ) {
-			return 'http://kb.yoast.dev/';
-		}
-
-		return 'https://kb.yoast.com/';
-	}
-
 	/**
 	 * Gets all menuItems.
 	 *
