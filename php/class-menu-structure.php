@@ -164,6 +164,12 @@ class Menu_Structure {
 				'label' => 'Dev blog',
 				'type'  => self::PLUGINS_TYPE,
 			) ) );
+		$mainMenuItem->addChild( new Menu_Item(
+			$this->yoastComBaseUrl . 'Licenses/',
+			array(
+				'label' => 'Licenses',
+				'type'  => self::PLUGINS_TYPE,
+			) ) );
 
 		$this->mainMenuItems[] = $mainMenuItem;
 	}
