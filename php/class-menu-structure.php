@@ -294,6 +294,7 @@ class Menu_Structure {
 				)
 			)
 		);
+
 		$mainMenuItem->addChild(
 			new Menu_Item(
 				$this->yoastComBaseUrl . 'licenses/',
