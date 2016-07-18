@@ -24,7 +24,8 @@ class Menu_Structure {
 	private $menuItems;
 	private $yoastComBaseUrl;
 	private $myYoastBaseUrl;
-	private $development = false;
+	private $academyBaseUrl;
+	private $kbBaseUrl;
 
 	/**
 	 * Menu_Structure constructor.
@@ -33,12 +34,10 @@ class Menu_Structure {
 	 * Create the menu structure.
 	 */
 	public function __construct() {
-		$this->development = ( defined( 'YOAST_ENVIRONMENT' ) && YOAST_ENVIRONMENT === 'development' );
-
-		$this->yoastComBaseUrl = $this->getYoastComBaseUrl();
-		$this->myYoastBaseUrl  = $this->getMyYoastBaseUrl();
-		$this->academyBaseUrl  = $this->getAcademyBaseUrl();
-		$this->kbBaseUrl       = $this->getKBBaseUrl();
+		$this->yoastComBaseUrl = apply_filters( 'yoast:domain', 'https://yoast.com/' );
+		$this->myYoastBaseUrl  = apply_filters( 'yoast:domain', 'https://my.yoast.com/' );
+		$this->academyBaseUrl  = apply_filters( 'yoast:domain', 'https://yoast.academy/' );
+		$this->kbBaseUrl       = apply_filters( 'yoast:domain', 'https://kb.yoast.com/' );
 
 		$this->registerLabelPrimaryCategoryConversion();
 
@@ -81,58 +80,6 @@ class Menu_Structure {
 	}
 
 	/**
-	 * Environment based Yoast.com URL
-	 *
-	 * @return string
-	 */
-	private function getYoastComBaseUrl() {
-		if ( $this->development ) {
-			return 'http://yoast.dev/';
-		}
-
-		return 'https://yoast.com/';
-	}
-
-	/**
-	 * Environment based my.Yoast.com URL
-	 *
-	 * @return string
-	 */
-	private function getMyYoastBaseUrl() {
-		if ( $this->development ) {
-			return 'http://my.yoast.dev/';
-		}
-
-		return 'https://my.yoast.com/';
-	}
-
-	/**
-	 * Environment based Yoast.academy URL
-	 *
-	 * @return string
-	 */
-	private function getAcademyBaseUrl() {
-		if ( $this->development ) {
-			return 'http://yoast.academy.dev/';
-		}
-
-		return 'https://yoast.academy/';
-	}
-
-	/**
-	 * Environment based kb.Yoast.com URL
-	 *
-	 * @return string
-	 */
-	private function getKBBaseUrl() {
-		if ( $this->development ) {
-			return 'http://kb.yoast.dev/';
-		}
-
-		return 'https://kb.yoast.com/';
-	}
-
-	/**
 	 * Add the menu items to the list.
 	 */
 	private function createMenuItems() {
@@ -156,7 +103,8 @@ class Menu_Structure {
 				'icon'             => 'yoast',
 				'type'             => self::HOME_TYPE,
 				'screenreaderText' => 'home',
-			) );
+			)
+		);
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
@@ -177,6 +125,7 @@ class Menu_Structure {
 				)
 			)
 		);
+
 		$mainMenuItem->addChild(
 			new Menu_Item(
 				$this->yoastComBaseUrl . 'calendar/',
@@ -361,6 +310,7 @@ class Menu_Structure {
 				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
 					$this->academyBaseUrl  => array(),
+					$this->yoastComBaseUrl . 'academy/' => array(),
 					$this->yoastComBaseUrl => array( 'yoast_courses' ),
 				),
 			)
@@ -572,4 +522,5 @@ class Menu_Structure {
 
 		$this->menuItems[] = $mainMenuItem;
 	}
+
 }
