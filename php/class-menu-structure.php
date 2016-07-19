@@ -320,7 +320,6 @@ class Menu_Structure {
 				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
 					$this->academyBaseUrl  => array(),
-					$this->yoastComBaseUrl . 'academy/' => array(),
 					$this->yoastComBaseUrl => array( 'yoast_courses' ),
 				),
 			)
