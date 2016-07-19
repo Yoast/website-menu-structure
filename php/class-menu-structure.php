@@ -279,7 +279,7 @@ class Menu_Structure {
 			new Menu_Item(
 				$this->yoastComBaseUrl . 'software/yoast-seo-for-drupal-module/',
 				array(
-					'label' => 'Drupal',
+					'label' => 'Drupal module',
 					'type'  => self::PLUGINS_TYPE,
 				)
 			)
