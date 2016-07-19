@@ -103,6 +103,10 @@ class Menu_Structure {
 				'icon'             => 'yoast',
 				'type'             => self::HOME_TYPE,
 				'screenreaderText' => 'home',
+				'activeOn' => array(
+					$this->yoastComBaseUrl . 'shop/' => array(),
+					$this->yoastComBaseUrl . 'checkout/' => array(),
+				),
 			)
 		);
 
