@@ -42,7 +42,7 @@ class Menu_Item {
 		if ( ! empty( $args['screenreaderText'] ) ) {
 			$this->screenreaderText = $args['screenreaderText'];
 		}
-		if ( is_int( $args['parentIndex'] ) ) {
+		if ( isset( $args['parentIndex'] ) && is_int( $args['parentIndex'] ) ) {
 			$this->parentIndex = $args['parentIndex'];
 		}
 
