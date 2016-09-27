@@ -136,6 +136,16 @@ class Menu_Structure {
 			)
 		);
 
+		$mainMenuItem->addChild(
+			new Menu_Item(
+				$this->yoastComBaseUrl . 'contact/',
+				array(
+					'label' => 'Contact',
+					'type'  => self::HOME_TYPE,
+				)
+			)
+		);
+
 		// Uncomment once my.yoast.com has user accounts for the public.
 
 		/*
