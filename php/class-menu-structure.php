@@ -347,16 +347,6 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/seo-copywriting-training/',
-				array(
-					'label' => 'SEO copywriting',
-					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
 				$this->yoastComBaseUrl . 'academy/course/basic-seo-training/',
 				array(
 					'label' => 'Basic SEO',
@@ -370,6 +360,26 @@ class Menu_Structure {
 				$this->yoastComBaseUrl . 'academy/course/yoast-seo-wordpress-training/',
 				array(
 					'label' => 'Yoast SEO for WordPress',
+					'type'  => self::COURSES_TYPE,
+				)
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
+				$this->yoastComBaseUrl . 'academy/course/seo-copywriting-training/',
+				array(
+					'label' => 'SEO copywriting',
+					'type'  => self::COURSES_TYPE,
+				)
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
+				$this->yoastComBaseUrl . 'academy/course/keyword-research-training/',
+				array(
+					'label' => 'Keyword research',
 					'type'  => self::COURSES_TYPE,
 				)
 			)
