@@ -102,7 +102,7 @@ class Menu_Structure {
 			array(
 				'icon'             => 'yoast',
 				'type'             => self::HOME_TYPE,
-				'screenreaderText' => 'home',
+				'screenreaderText' => 'Home',
 			)
 		);
 
