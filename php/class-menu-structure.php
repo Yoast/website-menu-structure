@@ -451,6 +451,16 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
+				$this->yoastComBaseUrl . 'hire-us/yoast-seo-care/',
+				array(
+					'label' => 'Yoast SEO Care',
+					'type' => self::HIRE_US_TYPE,
+				)
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
 				$this->yoastComBaseUrl . 'hire-us/yoast-seo-configuration/',
 				array(
 					'label' => 'Yoast SEO configuration',
