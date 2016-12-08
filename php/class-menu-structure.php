@@ -404,6 +404,16 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
+				$this->yoastComBaseUrl . 'ebooks/shop-seo/',
+				array(
+					'label' => 'Shop SEO',
+					'type'  => self::EBOOKS_TYPE,
+				)
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
 				$this->yoastComBaseUrl . 'ebooks/seo-for-wordpress/',
 				array(
 					'label' => 'SEO for WordPress',
