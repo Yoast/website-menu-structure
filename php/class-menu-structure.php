@@ -404,9 +404,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/shop-seo/',
+				$this->yoastComBaseUrl . 'ebooks/seo-for-wordpress/',
 				array(
-					'label' => 'Shop SEO',
+					'label' => 'SEO for WordPress',
 					'type'  => self::EBOOKS_TYPE,
 				)
 			)
@@ -414,9 +414,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/seo-for-wordpress/',
+				$this->yoastComBaseUrl . 'ebooks/shop-seo/',
 				array(
-					'label' => 'SEO for WordPress',
+					'label' => 'Shop SEO',
 					'type'  => self::EBOOKS_TYPE,
 				)
 			)
@@ -464,7 +464,7 @@ class Menu_Structure {
 				$this->yoastComBaseUrl . 'hire-us/yoast-seo-care/',
 				array(
 					'label' => 'Yoast SEO Care',
-					'type' => self::HIRE_US_TYPE,
+					'type'  => self::HIRE_US_TYPE,
 				)
 			)
 		);
