@@ -385,6 +385,16 @@ class Menu_Structure {
 			)
 		);
 
+		$mainMenuItem->addChild(
+			new Menu_Item(
+				$this->yoastComBaseUrl . 'academy/course/site-structure-training/',
+				array(
+					'label' => 'Site structure',
+					'type'  => self::COURSES_TYPE,
+				)
+			)
+		);
+
 		$this->menuItems[] = $mainMenuItem;
 	}
 
