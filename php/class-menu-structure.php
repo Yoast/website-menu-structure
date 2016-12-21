@@ -551,9 +551,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->kbBaseUrl . 'kb/category/website-reviews/',
+				$this->kbBaseUrl . 'kb/category/yoast-consultancy/',
 				array(
-					'label' => 'Website reviews',
+					'label' => 'Consultancy',
 					'type'  => self::FAQ_TYPE,
 				)
 			)
