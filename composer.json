@@ -6,5 +6,12 @@
             "name": "Team Yoast",
             "email": "support@yoast.com"
         }
-    ]
+    ],
+    "autoload": {
+        "classmap": [
+            "php/class-menu-item.php",
+            "php/class-main-menu-item.php",
+            "php/class-menu-structure.php"
+        ]
+    }
 }
