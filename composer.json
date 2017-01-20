@@ -1,0 +1,11 @@
+{
+    "name": "yoast/menu-structure",
+    "description": "Used to generate the menus on Yoast.com and other yoast sites",
+    "authors": [
+        {
+            "name": "Team Yoast",
+            "email": "support@yoast.com"
+        }
+    ],
+    "require": {}
+}
