@@ -491,26 +491,6 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'hire-us/website-review/gold-seo-review/',
-				array(
-					'label' => 'Gold review',
-					'type'  => self::HIRE_US_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'hire-us/website-review/platinum-seo-review/',
-				array(
-					'label' => 'Platinum review',
-					'type'  => self::HIRE_US_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
 				$this->yoastComBaseUrl . 'hire-us/seo-consultancy/',
 				array(
 					'label' => 'Yoast consultancy',
