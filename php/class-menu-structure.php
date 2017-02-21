@@ -367,6 +367,16 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
+				$this->yoastComBaseUrl . 'academy/course/technical-seo-1-training/',
+				array(
+					'label' => 'Technical SEO',
+					'type'  => self::COURSES_TYPE,
+				)
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
 				$this->yoastComBaseUrl . 'academy/course/yoast-seo-wordpress-training/',
 				array(
 					'label' => 'Yoast SEO for WP',
