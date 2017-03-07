@@ -72,7 +72,7 @@ class Menu_Structure {
 	public function convertLabelToPrimaryCategory( $label ) {
 
 		switch ( $label ) {
-			case 'UX & Conversion':
+			case 'UX':
 				return 'Usability & Conversion';
 		}
 
@@ -210,9 +210,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'cat/search-news/',
+				$this->yoastComBaseUrl . 'cat/seo-basics/',
 				array(
-					'label' => 'Search news',
+					'label' => 'SEO basics',
 					'type'  => self::SEO_BLOG_TYPE,
 				)
 			)
@@ -222,7 +222,7 @@ class Menu_Structure {
 			new Menu_Item(
 				$this->yoastComBaseUrl . 'cat/usability/',
 				array(
-					'label' => 'UX & Conversion',
+					'label' => 'UX',
 					'type'  => self::SEO_BLOG_TYPE,
 				)
 			)
