@@ -136,6 +136,16 @@ class Menu_Structure {
 			)
 		);
 
+        $mainMenuItem->addChild(
+            new Menu_Item(
+                $this->yoastComBaseUrl . 'conference/',
+                array(
+                    'label' => 'YoastCon',
+                    'type'  => self::HOME_TYPE,
+                )
+            )
+        );
+
 		$mainMenuItem->addChild(
 			new Menu_Item(
 				$this->yoastComBaseUrl . 'contact/',
