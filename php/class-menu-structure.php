@@ -397,9 +397,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/keyword-research-training/',
+				$this->yoastComBaseUrl . 'academy/course/structured-data-training',
 				array(
-					'label' => 'Keyword research',
+					'label' => 'Structured Data',
 					'type'  => self::COURSES_TYPE,
 				)
 			)
@@ -407,9 +407,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/site-structure-training/',
+				$this->yoastComBaseUrl . 'academy/courses/',
 				array(
-					'label' => 'Site structure',
+					'label' => 'More courses »',
 					'type'  => self::COURSES_TYPE,
 				)
 			)
