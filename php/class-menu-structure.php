@@ -399,7 +399,7 @@ class Menu_Structure {
 			new Menu_Item(
 				$this->yoastComBaseUrl . 'academy/course/structured-data-training',
 				array(
-					'label' => 'Structured Data',
+					'label' => 'Structured data',
 					'type'  => self::COURSES_TYPE,
 				)
 			)
