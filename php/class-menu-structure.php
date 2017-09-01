@@ -18,7 +18,6 @@ class Menu_Structure {
 	const PLUGINS_TYPE = 'plugins';
 	const COURSES_TYPE = 'courses';
 	const EBOOKS_TYPE = 'ebooks';
-	const HIRE_US_TYPE = 'hire-us';
 	const FAQ_TYPE = 'faq';
 
 	private $menuItems;
@@ -88,7 +87,6 @@ class Menu_Structure {
 		$this->addPluginsMenu();
 		$this->addCoursesMenu();
 		$this->addEBooksMenu();
-		$this->addHireUsMenu();
 		$this->addFAQMenu();
 	}
 
@@ -471,54 +469,6 @@ class Menu_Structure {
 				)
 			)
 		);
-
-		$this->menuItems[] = $mainMenuItem;
-	}
-
-	/**
-	 * Create the Hire Us menu
-	 */
-	private function addHireUsMenu() {
-
-		$mainMenuItem = new Main_Menu_Item(
-			$this->yoastComBaseUrl . 'hire-us/',
-			array(
-				'label'    => 'Hire us',
-				'type'     => self::HIRE_US_TYPE,
-				'activeOn' => array( $this->yoastComBaseUrl => array( 'post' ) ),
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'hire-us/yoast-seo-care/',
-				array(
-					'label' => 'Yoast SEO Care',
-					'type'  => self::HIRE_US_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'hire-us/yoast-seo-configuration/',
-				array(
-					'label' => 'Yoast SEO configuration',
-					'type'  => self::HIRE_US_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'hire-us/seo-consultancy/',
-				array(
-					'label' => 'Yoast consultancy',
-					'type'  => self::HIRE_US_TYPE,
-				)
-			)
-		);
-
 
 		$this->menuItems[] = $mainMenuItem;
 	}
