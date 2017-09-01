@@ -315,7 +315,7 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->myYoastBaseUrl . 'licenses/',
+				$this->myYoastBaseUrl . 'account/',
 				array(
 					'label' => 'Licenses',
 					'type'  => self::PLUGINS_TYPE,
