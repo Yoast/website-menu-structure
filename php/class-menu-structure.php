@@ -327,7 +327,7 @@ class Menu_Structure {
 				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
 					$this->academyBaseUrl  => array(),
-					$this->yoastComBaseUrl => array( 'yoast_courses' ),
+					$this->yoastComBaseUrl => array( 'yoast_courses' , 'yoast_ebooks'),
 				),
 			)
 		);
