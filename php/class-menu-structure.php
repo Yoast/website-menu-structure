@@ -366,63 +366,6 @@ class Menu_Structure {
 	}
 
 	/**
-	 * Create the E-Books menu
-	 */
-	private function addEBooksMenu() {
-
-		$mainMenuItem = new Main_Menu_Item(
-			$this->yoastComBaseUrl . 'ebooks/',
-			array(
-				'label'    => 'eBooks',
-				'type'     => self::EBOOKS_TYPE,
-				'activeOn' => array( $this->yoastComBaseUrl => array( 'yoast_ebooks' ) ),
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/seo-for-wordpress/',
-				array(
-					'label' => 'SEO for WordPress',
-					'type'  => self::EBOOKS_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/shop-seo/',
-				array(
-					'label' => 'Shop SEO',
-					'type'  => self::EBOOKS_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/content-seo-2/',
-				array(
-					'label' => 'Content SEO',
-					'type'  => self::EBOOKS_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/ux-conversion-seo/',
-				array(
-					'label' => 'UX & Conversion',
-					'type'  => self::EBOOKS_TYPE,
-				)
-			)
-		);
-
-		$this->menuItems[] = $mainMenuItem;
-	}
-
-	/**
 	 * Create the FAQ menu
 	 */
 	private function addFAQMenu() {
