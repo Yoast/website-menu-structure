@@ -86,7 +86,6 @@ class Menu_Structure {
 		$this->addSEOBlogMenu();
 		$this->addPluginsMenu();
 		$this->addCoursesMenu();
-		$this->addEBooksMenu();
 		$this->addFAQMenu();
 	}
 
@@ -134,15 +133,15 @@ class Menu_Structure {
 			)
 		);
 
-        $mainMenuItem->addChild(
-            new Menu_Item(
-                $this->yoastComBaseUrl . 'conference/',
-                array(
-                    'label' => 'YoastCon',
-                    'type'  => self::HOME_TYPE,
-                )
-            )
-        );
+		$mainMenuItem->addChild(
+			new Menu_Item(
+				$this->yoastComBaseUrl . 'conference/',
+				array(
+					'label' => 'YoastCon',
+					'type'  => self::HOME_TYPE,
+				)
+			)
+		);
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
@@ -277,7 +276,7 @@ class Menu_Structure {
 		$mainMenuItem = new Main_Menu_Item(
 			$this->yoastComBaseUrl . 'wordpress/plugins/',
 			array(
-				'label'    => 'Plugins',
+				'label'    => 'WordPress plugins',
 				'type'     => self::PLUGINS_TYPE,
 				'activeOn' => array( $this->yoastComBaseUrl => array( 'yoast_plugins', 'yoast_dev_article' ) ),
 			)
@@ -313,16 +312,6 @@ class Menu_Structure {
 			)
 		);
 
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->myYoastBaseUrl . 'account/',
-				array(
-					'label' => 'Licenses',
-					'type'  => self::PLUGINS_TYPE,
-				)
-			)
-		);
-
 		$this->menuItems[] = $mainMenuItem;
 	}
 
@@ -334,12 +323,32 @@ class Menu_Structure {
 		$mainMenuItem = new Main_Menu_Item(
 			$this->yoastComBaseUrl . 'academy/courses/',
 			array(
-				'label'    => 'Courses',
+				'label'    => 'SEO Courses',
 				'type'     => self::COURSES_TYPE,
 				'activeOn' => array(
 					$this->academyBaseUrl  => array(),
-					$this->yoastComBaseUrl => array( 'yoast_courses' ),
+					$this->yoastComBaseUrl => array( 'yoast_courses' , 'yoast_ebooks'),
 				),
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
+				$this->yoastComBaseUrl . 'academy/courses/',
+				array(
+					'label' => 'Courses',
+					'type'  => self::COURSES_TYPE,
+				)
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
+				$this->yoastComBaseUrl . 'ebooks/',
+				array(
+					'label'    => 'eBooks',
+					'type'     => self::COURSES_TYPE,
+				)
 			)
 		);
 
@@ -349,123 +358,6 @@ class Menu_Structure {
 				array(
 					'label' => 'My Academy',
 					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/basic-seo-training/',
-				array(
-					'label' => 'Basic SEO',
-					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/seo-copywriting-training/',
-				array(
-					'label' => 'SEO copywriting',
-					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/technical-seo-1-training/',
-				array(
-					'label' => 'Technical SEO',
-					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/yoast-seo-wordpress-training/',
-				array(
-					'label' => 'Yoast SEO for WP',
-					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/course/structured-data-training',
-				array(
-					'label' => 'Structured data',
-					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'academy/courses/',
-				array(
-					'label' => 'More courses »',
-					'type'  => self::COURSES_TYPE,
-				)
-			)
-		);
-
-		$this->menuItems[] = $mainMenuItem;
-	}
-
-	/**
-	 * Create the E-Books menu
-	 */
-	private function addEBooksMenu() {
-
-		$mainMenuItem = new Main_Menu_Item(
-			$this->yoastComBaseUrl . 'ebooks/',
-			array(
-				'label'    => 'eBooks',
-				'type'     => self::EBOOKS_TYPE,
-				'activeOn' => array( $this->yoastComBaseUrl => array( 'yoast_ebooks' ) ),
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/seo-for-wordpress/',
-				array(
-					'label' => 'SEO for WordPress',
-					'type'  => self::EBOOKS_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/shop-seo/',
-				array(
-					'label' => 'Shop SEO',
-					'type'  => self::EBOOKS_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/content-seo-2/',
-				array(
-					'label' => 'Content SEO',
-					'type'  => self::EBOOKS_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->yoastComBaseUrl . 'ebooks/ux-conversion-seo/',
-				array(
-					'label' => 'UX & Conversion',
-					'type'  => self::EBOOKS_TYPE,
 				)
 			)
 		);
