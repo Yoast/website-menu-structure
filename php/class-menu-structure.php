@@ -393,29 +393,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->kbBaseUrl . 'kb/category/yoast-consultancy/',
-				array(
-					'label' => 'Consultancy',
-					'type'  => self::FAQ_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
 				$this->kbBaseUrl . 'kb/category/drupal-modules/',
 				array(
 					'label' => 'Drupal',
-					'type'  => self::FAQ_TYPE,
-				)
-			)
-		);
-
-		$mainMenuItem->addChild(
-			new Menu_Item(
-				$this->kbBaseUrl . 'kb/category/wordpress-themes/',
-				array(
-					'label' => 'WordPress themes',
 					'type'  => self::FAQ_TYPE,
 				)
 			)
