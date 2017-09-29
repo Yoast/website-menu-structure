@@ -294,6 +294,16 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
+				$this->yoastComBaseUrl . 'software/yoast-seo-configuration/',
+				array(
+					'label' => 'Configure Yoast SEO for me',
+					'type'  => self::PLUGINS_TYPE,
+				)
+			)
+		);
+
+		$mainMenuItem->addChild(
+			new Menu_Item(
 				$this->yoastComBaseUrl . 'software/yoast-seo-for-drupal-module/',
 				array(
 					'label' => 'Drupal module',
