@@ -304,9 +304,9 @@ class Menu_Structure {
 
 		$mainMenuItem->addChild(
 			new Menu_Item(
-				$this->yoastComBaseUrl . 'software/yoast-seo-for-drupal-module/',
+				$this->yoastComBaseUrl . 'yoast-seo-platforms/',
 				array(
-					'label' => 'Drupal module',
+					'label' => 'Other platforms',
 					'type'  => self::PLUGINS_TYPE,
 				)
 			)
